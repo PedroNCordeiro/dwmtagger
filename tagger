@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+# Stores arguments in array <arg>
+function storeargs {
+	argnum=1;
+	for i in $@
+	do
+		arg[((argnum))]=$i;
+		((argnum++));
+	done
+	
+	while [ $argnum -le 9 ]
+	do
+		arg[((argnum))]=$argnum;
+		((argnum++));
+	done
+}
+
+storeargs $@
+
+N=19
+sed -i "${N}s/{.*/{ \"${arg[1]}\", \"${arg[2]}\", \"${arg[3]}\", \"${arg[4]}\", \"${arg[5]}\", \"${arg[6]}\", \"${arg[7]}\", \"${arg[8]}\", \"${arg[9]}\" };/" ~/AUR_pkgs/dwm/dwm/config.h
+
+cd ~/AUR_pkgs/dwm/dwm
+makepkg -efi
