@@ -1,4 +1,5 @@
 ### Tag editor for dwm
+------
 
 ##### Usage
 
