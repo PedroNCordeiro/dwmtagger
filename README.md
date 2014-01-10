@@ -1,9 +1,9 @@
 ### Tag editor for dwm
 
-###### Usage
+##### Usage
 
 	./tagger [tag1] [tag2] ... [tag9]
-	_Press exit key (default Shift + Mod1 + q)_
+	*Exit dwm key* (default Shift + Mod1 + q)
 
 	Note: If no arguments are passed, dwm stores tags by default (numbered).
 
