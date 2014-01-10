@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# Stores arguments in array <arg>
+# Stores arguments passed by the user
 function storeargs {
 	argnum=1;
 	for i in $@
@@ -18,8 +18,10 @@ function storeargs {
 
 storeargs $@
 
-N=19
-sed -i "${N}s/{.*/{ \"${arg[1]}\", \"${arg[2]}\", \"${arg[3]}\", \"${arg[4]}\", \"${arg[5]}\", \"${arg[6]}\", \"${arg[7]}\", \"${arg[8]}\", \"${arg[9]}\" };/" ~/AUR_pkgs/dwm/dwm/config.h
+dir=~/AUR_pkgs/dwm/dwm # location of configuration file
+N=19 # line number of where the tags are in your path
 
-cd ~/AUR_pkgs/dwm/dwm
+sed -i "${N}s/{.*/{ \"${arg[1]}\", \"${arg[2]}\", \"${arg[3]}\", \"${arg[4]}\", \"${arg[5]}\", \"${arg[6]}\", \"${arg[7]}\", \"${arg[8]}\", \"${arg[9]}\" };/" $dir/config.h
+
+cd ${dir}
 makepkg -efi
