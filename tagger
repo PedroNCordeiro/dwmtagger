@@ -21,6 +21,7 @@ storeargs $@
 dir=~/AUR_pkgs/dwm/dwm # location of configuration file
 N=19 # line number of where the tags are in your path
 
+# this will change config.h's tags in order of user input
 sed -i "${N}s/{.*/{ \"${arg[1]}\", \"${arg[2]}\", \"${arg[3]}\", \"${arg[4]}\", \"${arg[5]}\", \"${arg[6]}\", \"${arg[7]}\", \"${arg[8]}\", \"${arg[9]}\" };/" $dir/config.h
 
 cd ${dir}
