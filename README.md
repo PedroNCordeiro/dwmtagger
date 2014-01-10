@@ -9,7 +9,7 @@
 	Note: If no arguments are passed, dwm stores tags by default (numbered).
 
 
-Example: ./tagger Code Browser Documents
+Example: ./tagger Code Browser Documents  
 ![dwmtagger](http://i.imgur.com/Dzw7VdF.png)
 
 
